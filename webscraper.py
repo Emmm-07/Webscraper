@@ -6,7 +6,8 @@ soup = BeautifulSoup(page_to_scrape.text,"html.parser")
 
 movies = soup.findAll("a",attrs={"class":"film-poster-ahref"})
 
-print("Trending Movies of 2024:")
+
+print("Scraped Movies from tinyzone.org with video links:\n")
 for movie in movies:
     print(f"{movie.get('title')} - {movie.get('href')}")            #To return only the href attribute
 
